@@ -8,7 +8,8 @@
 # ปูพื้น
 * [การใช้ GitHub Desktop](chapter/github-desktop.md)
 * [ติดตั้ง CASDK บนระบบปฏิบัติการ windows10](chapter/1.md)
-* [ติดตั้ง mazda_emulator บน MACOSX](chapter/5.md)
 * [Application Lifecyles](chapter/2.md)
+* [ติดตั้ง mazda_emulator บน MACOSX](chapter/5.md)
 * [websocketd และการเขียนโปรแกรมติดต่อ](chapter/3.md)
 * [การแสดงภาพ Video ด้วย Gstreamer](chapter/4.md) 
+* [โครงสร้างข้อมูลแบบ JSON](chapter/6.md)
