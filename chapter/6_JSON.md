@@ -93,7 +93,7 @@ methodName : function() { code lines }
 objectName.methodName()
 ```
 
-* โค้ดตัวอย่างรวม **prpperties** และ **methods**
+* โค้ดตัวอย่างรวม **properties** และ **methods**
 
 จากวัตถุ `cars` ด้านบน กำหนด **properties** และ **methods** ดังนี้
 
@@ -117,6 +117,67 @@ cars = {
 	}
 };	
 ```
+
+## ตัวอย่างการใช้ JSON
+
+จากตัวอย่างออกแบบโครงสร้างข้อมูล `cars` ได้ดังนี้
+
+```JSON
+{
+   "cars": [
+	
+      {
+         "id":"01",
+         "name": "Mazda",
+         "model": "MAZDA2 Skyactiv-D",
+         "weight": "1200",
+         "color": "Red"
+      },
+
+      {
+         "id":"07",
+         "name": "Mazda",
+         "model": "MAZDA2 Skyactiv-G",
+         "weight": "1200",
+         "color": "White"
+      }
+   ]
+}
+```
+* คำสั่งใช้งาน
+
+```HTML
+<html>
+   <head>
+      <title>JSON example</title>
+		
+      <script language = "javascript" >
+  
+         var car1 = { "name" : "Mazda", "color"  : "Red" };
+         document.write("<h1>ตัวอย่างการใช้ JSON</h1>");
+         document.write("<br>");
+         document.write("<h3>name = " + object1.name+"</h3>");  
+         document.write("<h3>สี = " + object1.color+"</h3>");   
+
+         var car2 = { "name" : "Mazda", "color"  : "White" };
+         document.write("<br>");
+         document.write("<h3>name = " + object2.name+"</h3>");  
+         document.write("<h3>color = " + object2.color+"</h3>");   
+  
+         document.write("<hr />");
+         document.write(object2.name + " เป็นรถอยู่ในโครงการ Eco Car Phase 2 " + " มีรุ่นท๊อปสี " + object2.color);
+         document.write("<hr />");
+  
+      </script>
+		
+   </head>
+	
+   <body>
+   </body>
+	
+</html>
+```
+
 
 #อ้างอิง
 * [www.json.org](http://www.json.org/)

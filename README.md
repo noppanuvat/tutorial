@@ -7,9 +7,13 @@
 
 # ปูพื้น
 * [การใช้ GitHub Desktop](chapter/github-desktop.md)
-* [ติดตั้ง CASDK บนระบบปฏิบัติการ windows10](chapter/1.md)
-* [Application Lifecyles](chapter/2.md)
-* [ติดตั้ง mazda_emulator บน MACOSX](chapter/5.md)
-* [websocketd และการเขียนโปรแกรมติดต่อ](chapter/3.md)
-* [การแสดงภาพ Video ด้วย Gstreamer](chapter/4.md) 
-* [โครงสร้างข้อมูลแบบ JSON](chapter/6.md)
+* [ติดตั้ง CASDK บนระบบปฏิบัติการ windows10](chapter/1_CASDK.md)
+* [Application Lifecyles](chapter/2_CASDK_Lifecycles.md)
+* [ติดตั้ง mazda_emulator บน MACOSX](chapter/5_mazda_emulator.md)
+* [websocketd และการเขียนโปรแกรมติดต่อ](chapter/3_Websocketd.md) **ยังไม่เสร็จ**
+* [การแสดงภาพ Video ด้วย Gstreamer](chapter/4_GStreamer.md) 
+* [โครงสร้างข้อมูลแบบ JSON](chapter/6_JSON.md)
+* [การใช้ NodeJS](chapter/7_NodeJS.md)
+* [โครงสร้างข้อมูลแบบ Protocol Buffers](chapter/8_protobuf.md) **ยังไม่เสร็จ**
+* [โครงสร้างข้อมูลแบบ XML](chapter/9_XML.md) **ยังไม่เสร็จ**
+* [การใช้งานโครงสร้างข้อมูลใน Javascript](chapter/10_Javascript.md) **ยังไม่เสร็จ**
