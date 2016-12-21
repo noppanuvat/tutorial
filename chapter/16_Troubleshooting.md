@@ -73,5 +73,30 @@ diff -Naur sm.conf sm.conf.org
 cp -a /jci/opera/opera_home/opera.ini.org /jci/opera/opera_home/opera.ini
 ```
 
+### เปลี่ยน /jci เป็นอ่านข้อมูลใน USB
+จาก [M3R](http://mazda3revolution.com/forums/1899490-post5959.html) รู้ว่า mount /jci จากไดร์ฟภายนอกได้ ใช้วิธี copy file ต้นฉบับที่ได้จาก [S] เลือกเฉพาะ /jci ใส่ USB ฟอร์แมตเป็น ext4
+
+
+* ที่เครื่องคอมพิวเตอร์
+ใช้ระบบปฏิบัติการลินุกซ์ubuntu ฟอร์แมต USB เป็น ext4 ใช้คำสั่ง `fdisk` ลบพาร์ติเชั่นเดิม(คำสั่ง `d`)แล้วสร้างใหม(คำสั่ง `n`)และ ใช้คำสั่ง `mkfs.ext4` เพื่อแปลงพาร์ติดชั่นเป็นชนิ ext4
+
+```bash
+sudo mount /dev/sda1 /mnt
+cd /mnt
+sudo tar xf ~/cmu150_ADR56.00.513/reinstall/rootfs1upd/e0000000001.dat .
+cd
+sudo umount /mnt
+```
+
+* ที่รถ
+```bash
+mount -t ext4 -o defaults /dev/sda1/ /tmp/mnt/sda1
+mount --bind /tmp/mnt/sda1/jci /jci
+```
+
 ### เซต owner
-เฟิร์มแวร์ 56.00.100/230/240 มี owner "1000" อยู่ในกลุ่ม
+เฟิร์มแวร์ 56.00.100/230/240 มี owner uid=1018 gid=3015 คำสั่งเปลี่ยน owner
+```bash
+mount -o rw,remount /
+chown -R 1018:3015 /jci/sm/sm.conf
+```
