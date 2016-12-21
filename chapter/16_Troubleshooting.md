@@ -74,6 +74,7 @@ cp -a /jci/opera/opera_home/opera.ini.org /jci/opera/opera_home/opera.ini
 ```
 
 ### เปลี่ยน /jci เป็นอ่านข้อมูลใน USB
+สถานะ : เป็นแนวคิด ยังทำงานไม่ได้ 
 จาก [M3R](http://mazda3revolution.com/forums/1899490-post5959.html) รู้ว่า mount /jci จากไดร์ฟภายนอกได้ ใช้วิธี copy file ต้นฉบับที่ได้จาก [S] เลือกเฉพาะ /jci ใส่ USB ฟอร์แมตเป็น ext4
 
 
