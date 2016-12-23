@@ -447,7 +447,6 @@ log_message " "
 ### รายการไฟล์ที่ AIO แก้ไขเมื่อ uninstall ทั้งหมด
 
 ```txt
-/jci/gui/apps/_speedometer/templates/SpeedoMeter/images/
 /jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css
 /jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png
 /jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js
@@ -470,9 +469,6 @@ log_message " "
 /jci/gui/common/js/Common.js
 /jci/gui/framework/js/Utility.js
 /jci/lib/libmc_user.so
-/jci/nativegui/images/HorizontalSensors/*
-/jci/nativegui/images/MiniView/*
-/jci/nativegui/images/VerticalSensors/*
 /jci/nng/data.zip
 /jci/nng/jci-linux_imx6_volans-release
 /jci/opera/opera_dir/userjs/fps.js
