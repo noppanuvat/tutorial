@@ -479,3 +479,26 @@ log_message " "
 /jci/settings/configurations/blm_msg-system.xml
 /usr/lib/gstreamer-0.10/libgstalsa.so
 ```
+
+# คำสั่ง jci
+
+[M3R #2498](http://mazda3revolution.com/forums/1427002-post2498.html)
+
+```
+HDCP TOGGLE	set_hdcp_config.sh : enable/disable HDCP, region dependant
+SPEED TOGGLE	set_speed_restriction_config.sh
+DEV MODE TOGGLE	developer_mode.sh
+CPUGUAGE TOGGLE	jci-cpugauge.sh
+DISPLAY TOGGLE	set_display_config.sh : *** don't run it will disable the screen *** set display mode to jci or visteon
+RESET MAP	resetmap
+RESET VIP	resetvip
+USB DRIVER	usb_drivers.sh : add to kernel all usb drivers (hid, usbhid, sound, midi, audio)
+TAUSIM TOGGLE jci-tausim.sh : sets TAU simulation to on or off
+TERMINAL	run-terminal.sh : run an in-vehicle infotainment (IVI) Wayland's Weston terminal with keyboard map defined in /usr/share/wayland/evdev-pc105-us.xkm and accessed by USB-hid plugged keyboard and mouse
+WIFIAP TOGGLE	jci-wifiap.sh : creates an open access point (with no password) which SSID is named CMU-XX:XX:XX:XX:XX:XX (MAC address) on interface wlan0 192.168.53.1/24 [serving dhcp *.20 to *.254] and also on eth0 192.168.0.1/24 [serving dhcp *.20 to *.254]
+USERTTY TOGGLE	jci-log.sh :start a syslog daemon, can also send to a remote syslog client
+LVDS SPEED TOGGLE	set_lvds_speed_restriction_config.sh
+*.vcffile TOGGLE	?
+DelBDSF FILE TOGGLE	?
+NNG DEBUG TOGGLE	set_nng_debug.sh
+```
