@@ -56,7 +56,7 @@ fi
 # to allow execution
 chmod +x /data_persist/dev/bin/autorun
 ```
-Next time you can write command in `run.sh` without connect or modifed CMU.
+Next time you can put `run.sh` in SDCard to execute command without SSH to CMU.
 
 Try command below for testing
 ```bash
