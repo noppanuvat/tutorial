@@ -1,3 +1,7 @@
+#### IMPORTANT: All changes happen at your own risk!
+##### Anyone who is unsure should leave it alone, ask someone with experience to help or ask in the forum.
+##### I am not responsible for damages that may incur from the use.
+
 # CMU bringback
 
 ## Recovery libmc_user.so
@@ -61,7 +65,7 @@ Try command below for testing
 /jci/tools/jci-dialog --title="Ready" --text="AUTORUN Activated" --ok-label='OK' --no-cancel
 ```
 
-Real command show below. Be very careful.
+**Be very careful** to use below script.
 
 ```bash
 #!/bin/sh
