@@ -41,9 +41,9 @@ Put shell code in `/data_persist/dev/bin/autorun`.
 #!/bin/sh
 # /data_persist/dev/bin/autorun
 sleep 40
-if [ -e /mnt/sda1/libmc_user.so.511A-EU ]
+if [ -e /mnt/sda1/run.sh ]
 then
-    cp -a /mnt/sda1/libmc_user.so.511A-EU /jci/lib/libmc_user.so
+  sh /mnt/sda1/run.sh
 fi
 ```
 
@@ -51,6 +51,31 @@ fi
 # typing command in car
 # to allow execution
 chmod +x /data_persist/dev/bin/autorun
+```
+Next time you can write command in `run.sh` without connect or modifed CMU.
+
+Try command below for testing
+```bash
+#!/bin/sh
+# dry run example : run.sh
+/jci/tools/jci-dialog --title="Ready" --text="AUTORUN Activated" --ok-label='OK' --no-cancel
+```
+
+Real command show below. Be very careful.
+
+```bash
+#!/bin/sh
+# SD Card : run.sh
+PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin
+echo 1 > /sys/class/gpio/Watchdog\ Disable/value
+mount -o rw,remount /
+#Recommend to prevent Bootloop
+sed -i 's/watchdog_enable=\"true\"/watchdog_enable=\"false\"/g' /jci/sm/sm.conf
+sed -i 's|args=\"-u /jci/gui/index.html\"|args=\"-u /jci/gui/index.html --noWatchdogs\"|g' /jci/sm/sm.conf
+
+#Put your command here
+cp -a /mnt/sda1/libmc_user.so.511A-EU /jci/lib/libmc_user.so
+mount -o ro,remount /
 ```
 
 Then copy file from ([#Link Original libmc.so]( https://github.com/Siutsch/AIO---All-in-one-tweaks/tree/master/choose/config_org_all/media-order-patching/jci/lib)) to SDcard. Put it to car and reboot.
