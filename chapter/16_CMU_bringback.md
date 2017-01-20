@@ -15,6 +15,7 @@
 To connect CMU. Choosing some method
 
 #### Method 1: Enable WiFi AP Toggle
+- CMU IP : 192.168.53.1/24
 
 https://github.com/Siutsch/AIO---All-in-one-tweaks/blob/master/choose/docs/WIFI_AP_Toggle.txt
 
@@ -25,19 +26,24 @@ This method may not solve the problem because of USB issue.
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=M-iJLuxwfzU" target="_blank"><img src="http://img.youtube.com/vi/M-iJLuxwfzU/0.jpg" alt="JCI TEST" width="240" height="180" border="10" /></a>
 
 #### Method 3: USB-to-Ethernet
-
 This method may not solve the problem because of USB issue.
-http://mazda3revolution.com/forums/1315810-post1650.html
+
+- USB to Ethernet Device chipset : ASIX AX88772B
+- CMU IP : 192.168.42.1/24
+
+http://mazda3revolution.com/forums/2014-2016-mazda-3-skyactiv-audio-electronics/57714-infotainment-project-46.html
+http://mazda3revolution.com/forums/1309434-post1636.html
+http://mazda3revolution.com/forums/1610993-post4935.html
+http://mazda3revolution.com/forums/1286058-post1557.html
 
 #### Method 4: Serial Console
+- USB to Serial device chipset : FT232RL (TTL 3.3V)
 
 https://www.drive2.ru/l/452929522484904460/
 
 ### Task 2
 
 Put shell code in `/data_persist/dev/bin/autorun`.
-
-
 
 * Example (`/data_persist/dev/bin/autorun`)
 
