@@ -7,11 +7,11 @@
 ## Recovery libmc_user.so
 
 ### Problem
-1. I can't login to the MZD FW56.00.513 by SSH (### Task1)
-2. I don't have permission to modify the files. (### Task2)
+1. I can't login to the MZD FW56.00.513 by SSH. (Goto [Task 1](#task-1))
+2. I don't have permission to modify the files. (Goto [Task 2](#task-2))
 3. Problem still exist (### Its another issue)
 
-### Task1
+### Task 1
 To connect CMU. Choosing some method
 
 #### Method 1: Enable WiFi AP Toggle
