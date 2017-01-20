@@ -43,6 +43,8 @@ https://www.drive2.ru/l/452929522484904460/
 
 ### Task 2
 
+Ref : http://mazda3revolution.com/forums/1280610-post1532.html
+
 Put shell code in `/data_persist/dev/bin/autorun`.
 
 * Example (`/data_persist/dev/bin/autorun`)
