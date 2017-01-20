@@ -50,6 +50,7 @@ Put shell code in `/data_persist/dev/bin/autorun`.
 ```bash
 #!/bin/sh
 # /data_persist/dev/bin/autorun
+echo 1 > /sys/class/gpio/Watchdog\ Disable/value
 sleep 40
 if [ -e /mnt/sda1/run.sh ]
 then
