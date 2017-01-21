@@ -54,9 +54,9 @@ Put shell code in `/data_persist/dev/bin/autorun`.
 # /data_persist/dev/bin/autorun
 echo 1 > /sys/class/gpio/Watchdog\ Disable/value
 sleep 40
-if [ -e /mnt/sda1/run.sh ]
+if [ -e /mnt/sd_nav/run.sh ]
 then
-  sh /mnt/sda1/run.sh
+  sh /mnt/sd_nav/run.sh
 fi
 ```
 
@@ -87,7 +87,7 @@ sed -i 's/watchdog_enable=\"true\"/watchdog_enable=\"false\"/g' /jci/sm/sm.conf
 sed -i 's|args=\"-u /jci/gui/index.html\"|args=\"-u /jci/gui/index.html --noWatchdogs\"|g' /jci/sm/sm.conf
 
 #Put your command here
-cp -a /mnt/sda1/libmc_user.so.511A-EU /jci/lib/libmc_user.so
+cp -a /mnt/sd_nav/libmc_user.so.511A-EU /jci/lib/libmc_user.so
 mount -o ro,remount /
 ```
 
