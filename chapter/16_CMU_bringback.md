@@ -7,11 +7,11 @@
 ## Recovery libmc_user.so
 
 ### Problem
-1. I can't login to the MZD FW56.00.513 by SSH (### Task1)
-2. I don't have permission to modify the files. (### Task2)
+1. I can't login to the MZD FW56.00.513 by SSH. (Goto [Task 1](#task-1))
+2. I don't have permission to modify the files. (Goto [Task 2](#task-2))
 3. Problem still exist (### Its another issue)
 
-### Task1
+### Task 1
 To connect CMU. Choosing some method
 
 #### Method 1: Enable WiFi AP Toggle
@@ -43,6 +43,8 @@ https://www.drive2.ru/l/452929522484904460/
 
 ### Task 2
 
+Ref : http://mazda3revolution.com/forums/1280610-post1532.html
+
 Put shell code in `/data_persist/dev/bin/autorun`.
 
 * Example (`/data_persist/dev/bin/autorun`)
@@ -50,10 +52,11 @@ Put shell code in `/data_persist/dev/bin/autorun`.
 ```bash
 #!/bin/sh
 # /data_persist/dev/bin/autorun
+echo 1 > /sys/class/gpio/Watchdog\ Disable/value
 sleep 40
-if [ -e /mnt/sda1/run.sh ]
+if [ -e /mnt/sd_nav/run.sh ]
 then
-  sh /mnt/sda1/run.sh
+  sh /mnt/sd_nav/run.sh
 fi
 ```
 
@@ -62,7 +65,7 @@ fi
 # to allow execution
 chmod +x /data_persist/dev/bin/autorun
 ```
-Next time you can put `run.sh` in SDCard to execute command without SSH to CMU.
+You can put `run.sh` in SDCard to execute command without SSH to CMU.
 
 Try command below for testing
 ```bash
@@ -84,7 +87,7 @@ sed -i 's/watchdog_enable=\"true\"/watchdog_enable=\"false\"/g' /jci/sm/sm.conf
 sed -i 's|args=\"-u /jci/gui/index.html\"|args=\"-u /jci/gui/index.html --noWatchdogs\"|g' /jci/sm/sm.conf
 
 #Put your command here
-cp -a /mnt/sda1/libmc_user.so.511A-EU /jci/lib/libmc_user.so
+cp -a /mnt/sd_nav/libmc_user.so.511A-EU /jci/lib/libmc_user.so
 mount -o ro,remount /
 ```
 
