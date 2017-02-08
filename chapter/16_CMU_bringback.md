@@ -17,7 +17,11 @@ To connect CMU. Choosing some method
 #### Method 1: Enable WiFi AP Toggle
 - CMU IP : 192.168.53.1/24
 
+##### 1.1 JCI TEST Dialogue 
 https://github.com/Siutsch/AIO---All-in-one-tweaks/blob/master/choose/docs/WIFI_AP_Toggle.txt
+
+##### 1.2 USB Tweaks (In case cannot access JCI Dialogue)
+https://github.com/mzdonline/cmu-wifiap
 
 #### Method 2: Terminal Console
 
