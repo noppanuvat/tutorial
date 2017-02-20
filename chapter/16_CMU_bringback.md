@@ -89,12 +89,14 @@ Try command below for testing
 PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin
 echo 1 > /sys/class/gpio/Watchdog\ Disable/value
 mount -o rw,remount /
+
+#Put your command here
+#Example recovery libmc_user.so
+cp -a /mnt/sd_nav/libmc_user.so.511A-EU /jci/lib/libmc_user.so
+
 #Recommend to prevent Bootloop
 sed -i 's/watchdog_enable=\"true\"/watchdog_enable=\"false\"/g' /jci/sm/sm.conf
 sed -i 's|args=\"-u /jci/gui/index.html\"|args=\"-u /jci/gui/index.html --noWatchdogs\"|g' /jci/sm/sm.conf
-
-#Put your command here
-cp -a /mnt/sd_nav/libmc_user.so.511A-EU /jci/lib/libmc_user.so
 mount -o ro,remount /
 ```
 
