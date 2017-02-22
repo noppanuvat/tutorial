@@ -17,7 +17,7 @@ To connect CMU. Choosing some method
 #### Method 1: Enable WiFi AP Toggle
 - CMU IP : 192.168.53.1/24
 
-##### 1.1 JCI TEST Dialogue 
+##### 1.1 JCI TEST Dialogue
 https://github.com/Siutsch/AIO---All-in-one-tweaks/blob/master/choose/docs/WIFI_AP_Toggle.txt
 
 ##### 1.2 USB Tweaks (In case cannot access JCI Dialogue)
@@ -52,8 +52,15 @@ https://www.drive2.ru/l/452929522484904460/
 
 Ref : http://mazda3revolution.com/forums/1280610-post1532.html
 
-Put shell code in `/data_persist/dev/bin/autorun`.
+### Procedure
+1. Download `autorun`(https://raw.githubusercontent.com/mzdonline/cmu-autorun/master/installer/autorun) put to `/data_persist/dev/bin/` on CMU.
+2. Write your own `run.sh` put to SDCARD.
+3. Plug SDCARD to cars. Then reboot CMU.
+4. The script should execute `run.sh` only boot state.
 
+## Details
+### On cars
+Write script by using Serial console or SSH connection to your car.
 * Example (`/data_persist/dev/bin/autorun`)
 
 ```bash
@@ -63,24 +70,30 @@ echo 1 > /sys/class/gpio/Watchdog\ Disable/value
 sleep 40
 if [ -e /mnt/sd_nav/run.sh ]
 then
+  dos2unix /mnt/sd_nav/run.sh
   sh /mnt/sd_nav/run.sh
 fi
 ```
 
+Run command below on shell console to make sure script can properly execution.
 ```bash
 # typing command in car
 # to allow execution
+dos2unix /data_persist/dev/bin/autorun
 chmod +x /data_persist/dev/bin/autorun
 ```
-You can put `run.sh` in SDCard to execute command without SSH to CMU.
+
 
 Try command below for testing
+
+### On PC (Dry run)
 ```bash
 #!/bin/sh
 # dry run example : run.sh
-/jci/tools/jci-dialog --title="Ready" --text="AUTORUN Activated" --ok-label='OK' --no-cancel
+/jci/tools/jci-dialog --title="Ready" --text="AUTORUN install completed" --ok-label='OK' --no-cancel
 ```
 
+### Real `run.sh` code to recovery `libmc_user.so`
 **Be very careful** to use below script.
 
 ```bash
@@ -92,14 +105,17 @@ mount -o rw,remount /
 
 #Put your command here
 #Example recovery libmc_user.so
-cp -a /mnt/sd_nav/libmc_user.so.511A-EU /jci/lib/libmc_user.so
+cp -a /mnt/sd_nav/libmc_user.org /jci/lib/libmc_user.so
 
-#Recommend: propose protection code to prevent Bootloop 
+#display confirm dialog
+/jci/tools/jci-dialog --title="Good Job!" --text="File copied" --ok-label='OK' --no-cancel
+
+#Recommend: propose protection code to prevent Bootloop
 sed -i 's/watchdog_enable=\"true\"/watchdog_enable=\"false\"/g' /jci/sm/sm.conf
 sed -i 's|args=\"-u /jci/gui/index.html\"|args=\"-u /jci/gui/index.html --noWatchdogs\"|g' /jci/sm/sm.conf
 mount -o ro,remount /
 ```
 
-Then copy file from ([#Link Original libmc.so]( https://github.com/Siutsch/AIO---All-in-one-tweaks/tree/master/choose/config_org_all/media-order-patching/jci/lib)) to SDcard. Put it to car and reboot.
+Download original file `libmc_user.so` from ([#Link Original libmc.so]( https://github.com/Siutsch/AIO---All-in-one-tweaks/tree/master/choose/config_org_all/media-order-patching/jci/lib)) and rename to `libmc_user.so.org`. Then copy to SDCARD. Put SDCARD to car and reboot.
 
 Next boot the CMU will execute command by root privillege.
